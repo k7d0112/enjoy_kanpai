@@ -389,6 +389,10 @@ select::-ms-expand {
   }
 }
 
+.slick-initialized .slick-slide {
+  display: flex;
+}
+
 .introduction__slider-area {
   margin-top: 155px;
   position: relative;
@@ -497,7 +501,7 @@ select::-ms-expand {
   }
 }
 
-.slider__arrow {
+.slide-arrow {
   width: 48px;
   height: 48px;
   position: absolute;
@@ -505,36 +509,80 @@ select::-ms-expand {
   transform: translateY(-50%);
 }
 @media screen and (max-width: 1200px) {
-  .slider__arrow {
+  .slide-arrow {
     display: none;
   }
 }
 
-.arrow-left {
+.prev-arrow {
   left: -75px;
 }
 @media screen and (max-width: 1280px) {
-  .arrow-left {
+  .prev-arrow {
     left: -40px;
+    display: none;
   }
 }
 
-.arrow-right {
+.next-arrow {
   right: -93px;
 }
 @media screen and (max-width: 1320px) {
-  .arrow-right {
+  .next-arrow {
     right: -75px;
   }
 }
 @media screen and (max-width: 1280px) {
-  .arrow-right {
+  .next-arrow {
     right: -45px;
+    display: none;
   }
 }
 @media screen and (max-width: 1213px) {
-  .arrow-right {
+  .next-arrow {
     right: -35px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .slide-arrow.next-arrow.slick-arrow,
+.slide-arrow.prev-arrow.slick-arrow {
+    display: none;
+  }
+}
+.slick-dots {
+  bottom: -77px;
+}
+@media screen and (max-width: 768px) {
+  .slick-dots {
+    bottom: -40px;
+  }
+}
+
+.slick-dots li {
+  width: 19px;
+  height: 19px;
+  margin: 0 12px;
+}
+@media screen and (max-width: 768px) {
+  .slick-dots li {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  background-color: #000;
+  border-radius: 50%;
+}
+@media screen and (max-width: 768px) {
+  .slick-dots li button:before {
+    width: 13px;
+    height: 13px;
   }
 }
 
@@ -1079,12 +1127,12 @@ select::-ms-expand {
 
 .thanks__inner {
   padding: 0 55px 412px;
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   .thanks__inner {
     padding: 0;
     height: 491px;
-    position: relative;
   }
 }
 
@@ -1116,6 +1164,35 @@ select::-ms-expand {
     position: absolute;
     top: 0;
     left: 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  .thanks__title {
+    font-size: 80px;
+  }
+}
+
+.thanks__bg {
+  max-width: 900px;
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+@media screen and (max-width: 1024px) {
+  .thanks__bg {
+    max-width: 750px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .thanks__bg {
+    max-width: 400px;
+    bottom: -20px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .thanks__bg {
+    bottom: 0;
   }
 }
 
